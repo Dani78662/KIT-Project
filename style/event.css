@@ -1,0 +1,194 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root {
+    --color-primary: #FEE1B3;
+    --colo-secondary:#FF5200;
+
+}
+html{
+    font-size: 62.5%;
+}
+body{
+    background-color: var(--color-primary);
+}
+.container{
+    margin: 0 5rem;
+}
+.heading{
+    text-align: center;
+    margin: 10rem 0;
+}
+.heading h1{
+    font-size: 5rem;
+    padding: 1rem;
+}
+.heading h1 span{
+    color: var(--colo-secondary);
+}
+.heading h3{
+    font-size: 2.5rem ;
+}
+.container img{
+    width: 100%;
+}
+.event{
+    display: flex;
+    flex-flow: row;
+    justify-content:space-evenly;
+    width: 100wh;
+    margin-bottom: 10rem ;
+}
+.event .content{
+    padding: 5rem 0;
+}
+.event .price {
+    font-size: 3rem;
+    color: var(--colo-secondary);
+    padding-bottom: 1rem; 
+}
+.event .category{
+    font-size: 3rem;
+    padding-bottom: 1.5rem;
+}
+.event .abc p{
+    font-size: 1.8rem;
+    padding-bottom: 1rem;  
+}
+.event .first_p{
+    font-size: 1.8rem;
+    padding-bottom: 3rem;
+}
+.image , .content{
+    width: 40%;
+}
+.abc{
+    display: flex;
+}
+.abc i{
+    font-size: 2rem;
+    color: var(--colo-secondary);
+    margin-right: 1rem;
+}
+
+@media only screen and (max-width:900px){
+    .heading{
+        text-align: center;
+        margin: 5rem 0;
+    }
+    .heading h1{
+        font-size: 3.5rem;
+        padding: 1rem;
+    }
+    .heading h1 span{
+        color: var(--colo-secondary);
+    }
+    .heading h3{
+        font-size: 1.8rem ;
+    }
+    .container img{
+        width: 100%;
+    }
+    .event{
+        display: flex;
+        width: 100wh;
+        margin-bottom: 4rem ;
+    }
+    .event .content{
+        padding: 1rem 3rem;
+    }
+    .event .price {
+        font-size: 2rem;
+        color: var(--colo-secondary); 
+    }
+    .event .category{
+        font-size: 1.5rem;
+        padding-bottom: 0.5rem;
+    }
+    .event .first_p{
+        font-size: 1.3rem;
+        padding-bottom: 0.9rem;
+    }
+    .event .abc p{
+        font-size: 1.3rem; 
+        padding-bottom: 0.5rem; 
+    }
+    .image , .content{
+        width: 50%;
+    }
+    .abc{
+        display: flex;
+    }
+    .abc i{
+        font-size: 1rem;
+        color: var(--colo-secondary);
+        margin-right: 1rem;
+    } 
+}
+
+@media only screen and (max-width:699px ){
+    .container{
+        margin: 0 3 rem;
+    }
+    .heading{
+        text-align: center;
+        margin: 3rem 0;
+    }
+    .heading h1{
+        font-size: 2.5rem;
+        padding: 1rem;
+    }
+    .heading h1 span{
+        color: var(--colo-secondary);
+    }
+    .heading h3{
+        font-size: 1.5rem ;
+    }
+    .container img{
+        width: 100%;
+    }
+    .event{
+        display: flex;
+        flex-direction: column;
+        width: 100wh;
+        margin-bottom: 4rem ;
+    }
+    .anniversery{
+        flex-flow:column-reverse ;
+    }
+    .silver_jublee{
+        flex-flow: column-reverse;
+    }
+    .event .content{
+        padding: 3rem 0;
+    }
+    .event .price {
+        font-size: 2rem;
+        color: var(--colo-secondary); 
+    }
+    .event .category{
+        font-size: 1.5rem;
+        padding-bottom: 0.5rem;
+    }
+    .event .first_p{
+        font-size: 1.3rem;
+        padding-bottom: 0.9rem;
+    }
+    .event .abc p{
+        font-size: 1.3rem; 
+        padding-bottom: 0.5rem; 
+    }
+    .image , .content{
+        width: 100%;
+    }
+    .abc{
+        display: flex;
+    }   
+    .abc i{
+        font-size: 1rem;
+        color: var(--colo-secondary);
+        margin-right: 1rem;
+    } 
+}

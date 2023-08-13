@@ -1,0 +1,92 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+:root {
+    --color-primary: rgb(254, 225, 179);
+    --colo-secondary:#FF5200;
+
+}
+html{
+    font-size: 62.5%;
+}
+body{
+    --color-primary: rgb(248, 201, 125);
+    background: linear-gradient(rgba(242, 203, 140, 0.9), rgba(248, 201, 125, 0.8)), url(/assest/gallay-bg1.jpg)no-repeat center center/cover ;
+}
+.container{
+    margin: 0 5rem;
+    display: flex;
+    flex-direction: column;
+}
+.birthday_gallary{
+    display: flex;
+    margin: 2.5rem 0;
+}
+.birthday_gallary .heading{
+    font-size: 3rem;
+    width: 50%;
+}
+.birthday_gallary .images{
+    width: 50%;
+    padding: 5rem 0;
+   display: grid;
+   grid-template-columns: repeat(3 , 25vh);
+   grid-template-rows: repeat(3 , 10vw);
+   grid-gap:1.5rem ;
+}
+.images img{
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+}
+.anniversery_gallary{
+    display: flex;
+    margin: 2.5rem 0;
+}
+.anniversery_gallary .heading{
+    font-size: 3rem;
+    width: 50%;
+}
+.anniversery_gallary .images{
+    width: 50%;
+    padding: 5rem 0;
+   display: grid;
+   grid-template-columns: repeat(3 , 25vh);
+   grid-template-rows: repeat(3 , 10vw);
+   grid-gap:1.5rem ;
+}
+
+.grand_gallary{
+    display: flex;
+    margin: 2.5rem 0;
+}
+.grand_gallary .heading{
+    font-size: 3rem;
+    width: 50%;
+}
+.grand_gallary .images{
+    width: 50%;
+    padding: 5rem 0;
+   display: grid;
+   grid-template-columns: repeat(3 , 25vh);
+   grid-template-rows: repeat(3 , 10vw);
+   grid-gap:1.5rem ;
+}
+.Jubliee_gallary{
+    display: flex;
+    margin: 2.5rem 0;
+}
+.Jubliee_gallary .heading{
+    font-size: 3rem;
+    width: 50%;
+}
+.Jubliee_gallary .images{
+    width: 50%;
+    padding: 5rem 0;
+   display: grid;
+   grid-template-columns: repeat(3 , 25vh);
+   grid-template-rows: repeat(3 , 10vw);
+   grid-gap:1.5rem ;
+}

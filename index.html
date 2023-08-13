@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HOME | HUNGRY</title>
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="style/index.css">
+     <link rel="stylesheet" href="/style/common.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
     integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
@@ -13,82 +14,79 @@
 </head>
 
 <body>
-<!-- NAVBAR  -->
-    <header>
-        <div class="navbar">
-            <div class="nav-logo">
-                <img src="Assets/logo/HUNGRY.png" class="animate__animated animate__slideInLeft"></a>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="index.html">HOME</a></li>
-                    <div class="dropdown">
-                        <a href="dinner.html" class="dropbtn">MENU </a>
-                    </div>
-                    <li><a href="#">GALLERY</a></li>
-                    <li><a href="aboutUs.html">ABOUT US</a></li>
-                    <li><a href="#">EVENTS</a></li>
+    <!-- header section-->
+    <div id="container" class="container section">
+      <div class="navbar">
+          <div class="nav-logo ">
+              <img src="/assest/logo/HUNGRY.png" class="animate__animated animate__slideInLeft" alt=" Foodpanda">
+          </div>
+          <div class="menu ">
+              <ul>
+                   <li class="padding-top2 active"><a href="index.html">Home</a></li>
+                  <li class="padding-top2 hover"><a href="html pages/menu.html">Menu</a></li>
+                  <li class="padding-top2 hover"><a href="/html pages/Event.html">Events</a></li>
+                  <li class="padding-top2 hover"><a href="html pages/gallary.html">gallary</a></li>
+                  <li class="padding-top2 hover"><a href="html pages/aboutUs.html">About</a></li>
+                  <li class="padding-top2 hover"><a href="html pages/contactUs.html">Contact us</a></li>
                 </ul>
-            </nav>
-            <div class="book-btn">
-                <button>BOOK A TABLE</button>
-            </div>
-        </div>
-    </header>
+          </div>
+          <div class="menu">
+            <ul><li class="'button padding-top0 padding-bottom"><button>Choose Location</button></li></ul>
+          </div>
+      </div>
+  </div>
+  <!-- header section -->
+
     <!-- TITLE  -->
     <div class="title">
         <h1 class="animate__animated animate__flipInX"> TREAT<hr>  HUNGER </h1>
         <p>“IT'S EASIER TO BE FAITHFUL TO A RESTAURANT THAN TO A WOMAN.”</p><br>
         <button>EXPLORE NOW</button>
     </div>
-
-    <!-- FOOTER  -->
-    <footer>
-        <!-- Footer main -->
-        <section class="ft-main">
-          <div class="ft-main-item">
-            <h2 class="ft-title">KIT PROJECT</h2>
-            <ul>
-              <li><a href="index.html">Home</a></li>
-              <li><a href="menu.html">Menu</a></li>
-              <li><a href="#">Gallery</a></li>
-              <li><a href="#">About us</a></li>
-              <li><a href="#">Contact us</a></li>
-            </ul>
+         <!--Footer Section-->
+         <footer >
+          <div class="container">
+              <div class="footer_top">
+                  <img src="/assest/logo/HUNGRY.png" class="animate__animated animate__slideInLeft" alt="">
+              </div>
+              <div class="footer_mid">
+                  <div class="ftr_mid1">
+                      <h2>Navigate</h2>
+                      <ul>
+                          <li><a href="#">Home</a></li>
+                          <li><a href="#">About</a></li>
+                          <li><a href="#">Contact</a></li>
+                          <li><a href="#">Newsroom</a></li>
+                      </ul>
+                  </div>
+                  <div class="ftr_mid2">
+                      <h2>Collaborate</h2>
+                      <ul>
+                          <li><a href="#">Explore Careers</a></li>
+                          <li><a href="#">Become a rider</a></li>
+                          <li><a href="#">Try Panda ads</a></li>
+                          <li><a href="#">Feed your team</a></li>
+                      </ul>
+                  </div>
+                  <div class="ftr_mid3">
+                      <h2>    FOLLOW US ON</h2>
+                      <div class="svg">
+                          <i class="fa-brands fa-linkedin-in"></i>
+                          <i class="fa-brands fa-twitter"></i>
+                          <i class="fa-brands fa-instagram"></i>
+                      </div>
+                  </div>
+              </div>
+              <div class="footer_bottom">
+                  <div class="copywrite">
+                      <p>Copyright © 2023 HUNGER
+                      </p>
+                  </div>
+                  <div class="privacy"><a href="#">Privacy policy</a></div>
+              </div>
           </div>
-          <div class="ft-main-item">
-           <hr> <a href="index.html"><img src="Assets/logo/HUNGRY.png" /></a><hr>
-        </div>
-          <div class="ft-main-item">
-              <h2 class="ft-title">Stay Updated</h2>
-              <p>Subscribe to our newsletter to get our latest news.</p>
-              <form>
-                  <input type="email" name="email" placeholder="EMAIL ADDRESS">
-                  <input type="submit" value="SUBSCRIBE">
-                </form>
-                <a href="#" class="link-class">
-                    <img src="Assets/app-apple.png" alt="Image Button" class="link-img">
-                </a>
-                <a href="#"
-                    class="link-class">
-                    <img src="Assets/app-google.png" alt="Image Button" class="link-img">
-                </a>
-                <a href="#" class="link-class">
-                    <img src="Assets/app-huawei.png" alt="Image Button" class="link-img">
-                </a>
-          </div>
-        </section>
-      
-        <!-- Footer social -->
-        <section class="ft-social">
-          <ul class="ft-social-list">
-            <li><a href="#"><i class="fab fa-facebook" id="face"></i></a></li>
-            <li><a href="#"><i class="fab fa-twitter" id="face"></i></a></li>
-            <li><a href="#"><i class="fab fa-instagram" id="insta"></i></a></li>
-            <li><a href="#"><i class="fab fa-youtube" id="youtube"></i></a></li>
-          </ul>
-        </section>
-      </footer>
+            </footer>
+          <!--Footer Section-->
 </body>
 
 </html>
