@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  :root {
+  --color-light: #f9f7f6;
+  --color-dark: black;
+  --font-display: "Century Gothic";
+}
+
+  html {
+    font-size: 95%; /* 1rem = 10px */
+    overflow-x: hidden;
+  }
+body{
+    background-image:linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 2, 3, 0.8)), url(Assets/67974682_32ff96.jpg);
+    height: 100vh;
+    background-size: cover;
+    background-position: center;
+    font-family: var(--font-display);
+}
+header{
+    padding: 1rem;
+    max-width: 1200px;
+    margin: auto;
+
+}
+.navbar {
+    display: flex;
+    max-width: 1400px;
+    width: 100%;
+    justify-content: space-between;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    align-items: center;
+  height: 100%;
+  }
+.nav-logo img {
+    cursor: pointer;
+    mix-blend-mode: lighten;
+    width: 180px;
+  }
+nav ul{
+    list-style-type: none;
+}
+
+nav ul li{
+    display: inline-block;
+}
+nav ul li a{
+    text-decoration: none;
+    color: var(--color-light);
+    padding: 5px 20px;
+    border: 1px transparent;
+    text-decoration: solid;
+    margin-top: top 50px;
+}
+nav ul li a:hover{
+    background-color: var(--color-light);
+    color: var(--color-dark);
+    
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropbtn {
+    text-decoration: none;
+  color: var(--color-light);
+  padding: 5px 20px;
+  border: 1px transparent;
+  background: none;
+  text-decoration: solid;
+  margin-top: top 50px;
+  cursor: pointer;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  min-width: 160px;
+   box-shadow: none;
+  z-index: 1;
+  
+}
+.dropdown-content a {
+  color: var(--color-light);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.dropdown-content a:hover { background-color: var(--color-light);
+  color: var(--color-dark);}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn { background-color: var(--color-light);
+  color: var(--color-dark);}
+    </style>
+</head>
+<body>
+
+        <header>
+            <div class="navbar">
+            <div class="nav-logo">
+                <img src="Assets/logo/HUNGRY.png"></a>
+            </div>
+            <nav>
+                <ul>
+                    <li ><a href="header.html">Home</a></li>
+                    <div class="dropdown">
+                        <a href="categories.html"><a class="dropbtn">Menu ▼</a></a>
+                        <div class="dropdown-content">
+                          <a href="acrylic.html">Acrylic</a>
+                          <a href="oil.html">Oil</a>
+                          <a href="caligraphy.html">Calligraphy</a>
+                        </div>
+                      </div>
+                      <li><a href="login.html">Gallery</a></li>
+                    <li><a href="about us.html">About us</a></li>
+                    <li><a href="contactus.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+        </header>
+</body>
+</html>
