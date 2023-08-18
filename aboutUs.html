@@ -4,6 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- <link rel="stylesheet" href="responsive.css"> -->
   <title>About Us</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
@@ -169,9 +170,125 @@
         0 0 200px var(--color-button);
 
     }
+    /* *************************************RESPONSIVE******************************************************* */
+
+    :root {
+    --navbar-bg-color: hsl(0, 0%, 15%);
+    --navbar-text-color: hsl(0, 0%, 85%);
+    --navbar-text-color-focus: white;
+    --navbar-bg-contrast: hsl(0, 0%, 25%);
+  }
+
+#navbar-toggle {
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .icon-bar {
+    display: block;
+    width: 25px;
+    height: 4px;
+    margin: 2px;
+    background-color: var(--navbar-text-color);
+  }
+  #navbar-toggle:is(:focus, :hover) .icon-bar {
+    background-color: var(--navbar-text-color-focus);
+  }
+  #navbar-toggle[aria-expanded="true"] .icon-bar:is(:first-child, :last-child) {
+    position: absolute;
+    margin: 0;
+    width: 30px;
+  }
+  #navbar-toggle[aria-expanded="true"] .icon-bar:first-child {
+    transform: rotate(45deg);
+  }
+  #navbar-toggle[aria-expanded="true"] .icon-bar:nth-child(2) {
+    opacity: 0;
+  }
+  #navbar-toggle[aria-expanded="true"] .icon-bar:last-child {
+    transform: rotate(-45deg);
+  }
+  #navbar-menu {
+    position: fixed;
+    top: var(--navbar-height);
+    bottom: 0;
+    opacity: 0;
+    visibility: hidden;
+    left: 0;
+    right: 0;
+  }
+  #navbar-toggle[aria-expanded="true"] + #navbar-menu {
+    background-color: rgba(0, 0, 0, 0.4);
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  #navbar-toggle[aria-expanded="true"] + #navbar-menu .navbar-links {
+    padding: 1em;
+  }
+  
+ 
+  @media screen and (min-width: 821px) {
+	
+
+    #navbar-toggle,
+    #navbar-toggle[aria-expanded="true"] {
+      display: none;
+    }
+  
+    #navbar-menu,
+    #navbar-toggle[aria-expanded="true"] #navbar-menu {
+      visibility: visible;
+      opacity: 1;
+      position: static;
+      display: block;
+      height: 100%;
+    }
+  
+    .navbar-links,
+    #navbar-toggle[aria-expanded="true"] #navbar-menu .navbar-links {
+      margin: 0;
+      padding: 0;
+      box-shadow: none;
+      position: static;
+      flex-direction: row;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  
+  @media only screen and (max-width: 768px) {
 
 
+	body{
+		/* overflow-x: hidden; */
+	}
 
+	button{
+		font-size: smaller;
+	}
+	.title h1{
+		font-size: 3rem;
+	}
+	.d-flex{
+    /* flex-direction: row; */
+    /* width: 100%; */
+    /* display: block; */
+  }
+.card{
+  /* width: 20%; */
+  /* flex-direction: row; */
+}
+  }
+
+
+/* **********************************************CONTENT*********************************************************** */
     .imggg {
       width: 100%;
       height: 400px;
@@ -387,27 +504,36 @@
   <!-- NAVBAR  -->
   <header>
     <div class="navbar">
-      <div class="nav-logo">
-        <img src="Assets/logo/HUNGRY.png" class="animate__animated animate__slideInLeft"></a>
-      </div>
-      <nav>
-        <ul>
-          <li><a href="index.html">HOME</a></li>
-                    <div class="dropdown">
-                        <a href="dinner.html" class="dropbtn">MENU</a>
-                    </div>
-                    <li><a href="gallery.html">GALLERY</a></li>
-                    <li><a href="events.html">EVENTS</a></li>
-                    <li><a href="aboutUs.html">ABOUT US</a></li>
-        </ul>
-      </nav>
-      <div class="book-btn">
-        <button>BOOK A TABLE</button>
-      </div>
+        <button type="button" id="navbar-toggle" aria-controls="navbar-menu" aria-label="Toggle menu" aria-expanded="false">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <div class="home-link">
+        <div class="nav-logo">
+            <img src="Assets/logo/HUNGRY.png" class="animate__animated animate__slideInLeft"></a>
+        </div>
+          </div>
+        <nav>
+            <div id="navbar-menu" aria-labelledby="navbar-toggle">
+            <ul class="navbar-links">
+                <li><a href="index.html">HOME</a></li>
+                <div class="dropdown">
+                    <a href="dinner.html" class="dropbtn">MENU</a>
+                </div>
+                <li><a href="gallery.html">GALLERY</a></li>
+                <li><a href="events.html">EVENTS</a></li>
+                <li><a href="aboutUs.html">ABOUT US</a></li>
+            </ul>
+            </div>
+        </nav>
+        <div class="book-btn">
+            <button>BOOK A TABLE</button>
+        </div>
     </div>
-  </header>
+</header>
 
-
+<!-- CONTENT  -->
   <div style="padding-top: 4rem;">
     <div class="container text-center innerDIV">
       <h1 class="display-4">ABOUT US</h1>
@@ -475,8 +601,8 @@
         <br />
       </div>
 
-      <div class="d-flex justify-content-center">
-        <div class="card" style="
+      <div class="d-flex justify-content-center card" style="background-color: black;">
+        <div class="card " style="
             width: 18rem;
             color: white;
             margin: 20px;
@@ -544,8 +670,8 @@
         <br />
         <div class="formDIV" style="width: 100%;">
           <div class="row">
-            <div class="col-6">
-              <form>
+            <div class="col-md-6">
+              <form class="row g-3">
                 <div class="form-group">
                   <label for="exampleInputName">Name</label>
                   <input type="text" class="form-control" id="exampleInputName" aria-describedby="nameHelp"
@@ -565,7 +691,7 @@
               </form>
 
             </div>
-            <div class="col-6">
+            <div class="col-md-6">
               <div class="contt">
                 <p><i class="fa-solid fa-phone"></i> +123 456 789</p>
 

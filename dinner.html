@@ -5,7 +5,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dinner Page</title>
-  <!-- <link rel="stylesheet" href="css/bootstrap.css"> -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
 
@@ -173,7 +172,124 @@
         0 0 200px var(--color-button);
 
     }
+/* *************************************RESPONSIVE******************************************************* */
 
+:root {
+    --navbar-bg-color: hsl(0, 0%, 15%);
+    --navbar-text-color: hsl(0, 0%, 85%);
+    --navbar-text-color-focus: white;
+    --navbar-bg-contrast: hsl(0, 0%, 25%);
+  }
+
+#navbar-toggle {
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .icon-bar {
+    display: block;
+    width: 25px;
+    height: 4px;
+    margin: 2px;
+    background-color: var(--navbar-text-color);
+  }
+  #navbar-toggle:is(:focus, :hover) .icon-bar {
+    background-color: var(--navbar-text-color-focus);
+  }
+  #navbar-toggle[aria-expanded="true"] .icon-bar:is(:first-child, :last-child) {
+    position: absolute;
+    margin: 0;
+    width: 30px;
+  }
+  #navbar-toggle[aria-expanded="true"] .icon-bar:first-child {
+    transform: rotate(45deg);
+  }
+  #navbar-toggle[aria-expanded="true"] .icon-bar:nth-child(2) {
+    opacity: 0;
+  }
+  #navbar-toggle[aria-expanded="true"] .icon-bar:last-child {
+    transform: rotate(-45deg);
+  }
+  #navbar-menu {
+    position: fixed;
+    top: var(--navbar-height);
+    bottom: 0;
+    opacity: 0;
+    visibility: hidden;
+    left: 0;
+    right: 0;
+  }
+  #navbar-toggle[aria-expanded="true"] + #navbar-menu {
+    background-color: rgba(0, 0, 0, 0.4);
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  #navbar-toggle[aria-expanded="true"] + #navbar-menu .navbar-links {
+    padding: 1em;
+  }
+  
+ 
+  @media screen and (min-width: 821px) {
+	
+
+    #navbar-toggle,
+    #navbar-toggle[aria-expanded="true"] {
+      display: none;
+    }
+  
+    #navbar-menu,
+    #navbar-toggle[aria-expanded="true"] #navbar-menu {
+      visibility: visible;
+      opacity: 1;
+      position: static;
+      display: block;
+      height: 100%;
+    }
+  
+    .navbar-links,
+    #navbar-toggle[aria-expanded="true"] #navbar-menu .navbar-links {
+      margin: 0;
+      padding: 0;
+      box-shadow: none;
+      position: static;
+      flex-direction: row;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  
+  @media only screen and (max-width: 768px) {
+
+
+	body{
+		/* overflow-x: hidden; */
+	}
+
+	button{
+		font-size: smaller;
+	}
+	.title h1{
+		font-size: 3rem;
+	}
+	.d-flex{
+    /* flex-direction: row; */
+    /* width: 100%; */
+    /* display: block; */
+  }
+.card{
+  width: 20%;
+}
+  }
+
+
+/* **********************************************CONTENT*********************************************************** */
 
     small {
       color: var(--color-button-secondary);
@@ -234,10 +350,11 @@ cursor: pointer;
     }
 
     .card {
+      color: yellow;
       width: 23rem;
       margin: 30px;
       border-radius: 10px !important;
-      background: bisque;
+      background: rgb(29, 28, 28);
       border: none !important;
     }
 
@@ -248,43 +365,6 @@ cursor: pointer;
     }
 
 
-    @media (max-width: 767px) {
-      .card {
-        width: 100%;
-        margin-right: 0;
-      }
-    }
-
-    /* Tablet view */
-    @media (min-width: 768px) and (max-width: 1023px) {
-      .card {
-        width: calc(50% - 10px);
-      }
-    }
-
-    /* Desktop and Laptop view */
-    @media (min-width: 1024px) {
-      .row {
-        display: flex;
-        flex-wrap: wrap;
-        margin: 0 -10px;
-      }
-
-      .col-3 {
-        width: 25%;
-        padding: 0 10px;
-      }
-
-      .col-9 {
-        width: 75%;
-        padding: 0 10px;
-      }
-
-      .card {
-        width: calc(50% - 10px);
-        margin-right: 20px;
-      }
-    }
 
 
 
@@ -447,23 +527,21 @@ cursor: pointer;
 <body>
 
   <!-- NAVBAR  -->
-  <header class="header_area">
-    <div class="container">
-      <div class="navbar navbar-expand-lg navbar-light">
-        <div class="nav-logo navbar-brand logo_h">
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+  <header>
+    <div class="navbar">
+        <button type="button" id="navbar-toggle" aria-controls="navbar-menu" aria-label="Toggle menu" aria-expanded="false">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <img src="Assets/logo/HUNGRY.png" class="animate__animated animate__slideInLeft"></a>
+          <div class="home-link">
+        <div class="nav-logo">
+            <img src="Assets/logo/HUNGRY.png" class="animate__animated animate__slideInLeft"></a>
         </div>
+          </div>
         <nav>
-          <!-- Collect the nav links, forms, and other content for toggling -->
-          <div class="collapse navbar-collapse offset" id="navbarSupportedContent">
-            <ul class="nav navbar-nav menu_nav ml-auto">
-              <ul>
+            <div id="navbar-menu" aria-labelledby="navbar-toggle">
+            <ul class="navbar-links">
                 <li><a href="index.html">HOME</a></li>
                 <div class="dropdown">
                     <a href="dinner.html" class="dropbtn">MENU</a>
@@ -471,14 +549,14 @@ cursor: pointer;
                 <li><a href="gallery.html">GALLERY</a></li>
                 <li><a href="events.html">EVENTS</a></li>
                 <li><a href="aboutUs.html">ABOUT US</a></li>
-              </ul>
+            </ul>
+            </div>
         </nav>
         <div class="book-btn">
-          <button>BOOK A TABLE</button>
+            <button>BOOK A TABLE</button>
         </div>
-      </div>
     </div>
-  </header>
+</header>
 
   <div class="container my-5 ">
     <h2 class="text-center dinner">DINNER</h2>
@@ -489,8 +567,8 @@ cursor: pointer;
     </p>
 
     <br /><br />
-    <div class="row">
-      <div class="col-3">
+    <div class="row" style="width: 100%;">
+      <div class="col-md-3">
         <small>SELECT YOUR MEAL</small>
         <h2>Popular <span class="food">Foods</span></h2>
         <ul class="list-group ulCSS">
@@ -500,10 +578,10 @@ cursor: pointer;
           <li class="list-group-item"> <a href="beverages.html">BEVERAGES</a></li>
         </ul>
       </div>
-      <div class="col-9">
+      <div class="col-md-9">
         <br /><br />
-
-        <div class="d-flex">
+<div class="row">
+        <div class="col-sm-6">
           <div class="card">
             <img class="card-img-top dinnerIMg"
               src="assets/dishes/33685b40-0461-11ee-911c-497570899609-Mighty_variant_0-2023-06-06115641.png"
@@ -515,6 +593,8 @@ cursor: pointer;
               </p>
             </div>
           </div>
+        </div>
+        <div class="col-sm-6">
           <div class="card">
             <img class="card-img-top dinnerIMg" src="assets/dishes/1677915253-Cheese_And_Pepporoni-removebg-preview.png"
               alt="dinner image" />
@@ -527,7 +607,7 @@ cursor: pointer;
           </div>
         </div>
 
-        <div class="d-flex">
+        <div class="col-sm-6">
           <div class="card">
             <img class="card-img-top dinnerIMg" src="assets/dishes/Fanta-1-178x178.png" alt="dinner image" />
             <div class="card-body">
@@ -537,6 +617,8 @@ cursor: pointer;
               </p>
             </div>
           </div>
+        </div>
+        <div class="col-sm-6">
           <div class="card">
             <img class="card-img-top dinnerIMg" src="assets/dishes/Strawberry-Sundae-178x178.png" alt="dinner image" />
             <div class="card-body">
@@ -550,6 +632,8 @@ cursor: pointer;
       </div>
     </div>
   </div>
+  </div>
+
 
   <div class="container my-3">
 
@@ -559,9 +643,8 @@ cursor: pointer;
       <h2>Popular <span class="food">Desserts</span></h2>
 
     </div>
-
-    <div class="d-flex my-4">
-      <div class="card">
+<div class="card-group">
+      <div class="card ">
         <img class="card-img-top dessertIMG" src="assets/cake/cake11.jpg" alt="dinner image" />
         <div class="card-body">
           <h4>Chocolate Muffin</h4>
@@ -570,9 +653,7 @@ cursor: pointer;
           </p>
         </div>
       </div>
-
-
-      <div class="card">
+      <div class="card ">
         <img class="card-img-top dessertIMG" src="assets/cake/cupcake122.jpg" alt="dinner image" />
         <div class="card-body">
           <h4>Rose Muffin</h4>
@@ -581,8 +662,7 @@ cursor: pointer;
           </p>
         </div>
       </div>
-
-      <div class="card">
+      <div class="card ">
         <img class="card-img-top dessertIMG" src="assets/cake/donut.jpeg" alt="dinner image" />
         <div class="card-body">
           <h4>Sweet Donut</h4>
@@ -591,8 +671,7 @@ cursor: pointer;
           </p>
         </div>
       </div>
-
-      <div class="card">
+      <div class="card ">
         <img class="card-img-top dessertIMG" src="assets/cake/slice.jpeg" alt="dinner image" />
         <div class="card-body">
           <h4>Choco cake11</h4>
@@ -601,8 +680,7 @@ cursor: pointer;
           </p>
         </div>
       </div>
-
-
+</div>
 
     </div>
 
